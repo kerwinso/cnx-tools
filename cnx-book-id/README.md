@@ -2,7 +2,7 @@
 Finds a CNX book ID by title via automated web browser.
 
 ## Dependencies
-####Install Selenium:
+#### Install Selenium:
 
 `pip install selenium` or `sudo easy_install selenium `
 
