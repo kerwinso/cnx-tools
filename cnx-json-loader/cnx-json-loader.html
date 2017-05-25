@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>dev00/tea CNX URL to JSON loader</title>
+<script type="text/javascript">
+var input = prompt('Enter full CNX URL on dev00 or tea server:');
+
+// URL to shorten == https://dev00.cnx.org/contents/GFy_h8cu@10.61:rZudN6XP@2/Introduction
+// URL to return == https://archive-dev00.cnx.org/contents/GFy_h8cu@10.61.json
+
+const regex = /^[a-z]+:\/\/([\S]+):/;
+var match = regex.exec(input);
+short_url = match[1];
+var json_url = "https://archive-" + short_url + ".json" ;
+window.open(json_url, "_top", "false");
+
+</script>
+</head>
+<body>
+Reload to see the thing for the thing.
+</body>
+</html>
