@@ -7,8 +7,8 @@ users =[]
 
 with open('users to copy from production.txt', 'r') as f:
 	for line in f:
-			line = line.rstrip()
-			users.append(line)
+		line = line.rstrip()
+		users.append(line)
 
 unique_users = []
 
