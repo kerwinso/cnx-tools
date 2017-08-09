@@ -1,7 +1,7 @@
-'''
+"""
 Removes duplicates from a text list of users (one per line) and 
 outputs list of unique users into another text file.
-'''
+"""
 
 users =[]
 
