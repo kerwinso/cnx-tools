@@ -2,78 +2,79 @@
 """
 some docstring here
 """
-import requests
-#import urllib
-#from bs4 import BeautifulSoup
 
+# Read the file, change URLs to qa domain
 inputfile = 'nestedterms.txt'
-
 urls = []
 with open(inputfile, 'r') as f:
     for line in f:
         line = line[0:69]
         new_link = line.replace('staging', 'qa')
         urls.append(new_link)
+# print urls
 
-print urls
-
-broken_links = []
-for u in urls:
-    r = requests.get(u)
-    status = r.status_code
-    if r.ok:
-        print (u + ': OK')
-    else:
-        print ('Error code ' + str(status) + ' found on: ' + u)
-        broken_links.append(u)
-
-print('Number of broken links: ' + str(len(broken_links)))
-
-if len(broken_links) > 0:
-    print('List of broken links: ')
-    for b in broken_links:
-        print ('\t' + b)
+# create an HTML file with links to all the things
+with open("qa-urls.html", "a") as myfile:
+    for u in urls:
+        myfile.write('<a href="' + u + '">' + u + '</a><br>\n')
 
 
-
-# REFERENCE TO BE DELETED BELOW
-#def choose_file():
-#    file_name = raw_input("Enter the name of your text input file " +
-#                           "(default is 'nestedterms.txt'): ")
-#     return file_name if bool(file_name) else 'input.txt'
-
-# address = 'http://oscms-qa.openstax.org/sitemap.xml'
-# xml = urllib.urlopen(address).read()
-
-# print ("Retrieving sitemap from " + address + ", processing...")
-
-# soup = BeautifulSoup(xml, 'lxml')
-
-# links = []
-# qalinks = []
-#
-# # gather all the links from the sitemap.xml into a list
-# for s in soup.find_all('loc'):
-#     links.append(s.text)
-#
-# # rewrite those links to use the QA domain and put into another list
-# for link in links:
-#     newlink = link.replace('openstax.org', 'oscms-qa.openstax.org')
-#     qalinks.append(newlink)
-#
+## Check for broken links on qa
+# import requests
 # broken_links = []
-# for link in qalinks:
-#     r = requests.get(link)
+# print "Checking http status codes..."
+# for u in urls:
+#     r = requests.get(u)
 #     status = r.status_code
 #     if r.ok:
-#         print (link + ': OK')
+#         pass
+#         # print (u + ': OK')
 #     else:
-#         print ('Error code ' + str(status) + ' found on: ' + link)
-#         broken_links.append(link)
+#         print ('Error code ' + str(status) + ' found on: ' + u)
+#         broken_links.append(u)
 #
 # print('Number of broken links: ' + str(len(broken_links)))
 #
 # if len(broken_links) > 0:
 #     print('List of broken links: ')
-#     for link in broken_links:
-#         print ('\t' + link)
+#     for b in broken_links:
+#         print ('\t' + b)
+
+
+## Aborted attempts to automate capturing the data/content/screenshots of all the URLs for diffing later
+# import urllib
+# for u in urls:
+#     #print u
+#     short_id = u[28:36]
+#
+#     # Read content of each URL, write to a file: FAIL, doesn't load page content
+#     # page = urllib.urlopen(u)
+#     # f = open("./data/" + short_id + ".txt", "w")
+#     # content = page.read()
+#     # f.write(content)
+#     # f.close()
+#     # # print(content)
+#
+#     # Try taking a screenshot in selenium instead: FAIL, doesn't grab the whole page
+#     from selenium import webdriver
+#     from selenium.webdriver.common.by import By
+#     from selenium.webdriver.support.ui import WebDriverWait
+#     from selenium.webdriver.support import expected_conditions as EC
+#     print "launching browser for " + u
+#     driver = webdriver.Chrome()
+#     wait = WebDriverWait(driver, 10)
+#
+#     driver.get(u)
+#
+#     # wait until Metadata tab in footer is found
+#     try:
+#         element = WebDriverWait(driver, 10).until(
+#             EC.presence_of_element_located((By.ID, "metadata-tab"))
+#         )
+#         driver.save_screenshot('./screenshots/' + short_id + '.png')
+#     except:
+#         print "Element not found :("
+#     finally:
+#         driver.quit()
+#
+
