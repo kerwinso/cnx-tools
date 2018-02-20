@@ -6,18 +6,16 @@ import requests
 #import urllib
 #from bs4 import BeautifulSoup
 
-
-
 inputfile = 'nestedterms.txt'
 
 urls = []
 with open(inputfile, 'r') as f:
     for line in f:
-        url = line[0:69]
-        #print url
-        urls.append(url)
+        line = line[0:69]
+        new_link = line.replace('staging', 'qa')
+        urls.append(new_link)
 
-# print urls
+print urls
 
 broken_links = []
 for u in urls:
@@ -35,6 +33,7 @@ if len(broken_links) > 0:
     print('List of broken links: ')
     for b in broken_links:
         print ('\t' + b)
+
 
 
 # REFERENCE TO BE DELETED BELOW
