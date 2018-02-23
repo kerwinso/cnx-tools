@@ -5,18 +5,20 @@ some docstring here
 
 # Read the file, change URLs to qa domain
 inputfile = 'nestedterms.txt'
-urls = []
+urls = {}
 with open(inputfile, 'r') as f:
     for line in f:
-        line = line[0:69]
-        new_link = line.replace('staging', 'qa')
-        urls.append(new_link)
-# print urls
+        url = line[0:69]
+        url_title = line[72:].strip()
+        new_link = url.replace('staging', 'qa')
+        urls[new_link] = url_title
 
-# create an HTML file with links to all the things
-with open("qa-urls.html", "a") as myfile:
-    for u in urls:
-        myfile.write('<a href="' + u + '">' + u + '</a><br>\n')
+print urls
+
+# create an ordered HTML file with links to all the things
+with open("qa-urls-new.html", "a") as myfile:
+    for new_link, url_title in urls.items():
+        myfile.write('<li><a href="' + new_link + '">' + new_link + '</a> ' + url_title + '</li>\n')
 
 
 ## Check for broken links on qa
