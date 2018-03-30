@@ -1,7 +1,5 @@
 inputfile = 'flicker-test-plan.md'
 
-some_list = []
-
 with open(inputfile, 'r') as f:
     for line in f:
         line = line.replace('[x]', '[ ]')
