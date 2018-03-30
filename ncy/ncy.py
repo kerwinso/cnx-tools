@@ -36,6 +36,6 @@ driver.quit()
 print '\n Total NCY found: ', len(urls_with_ncy)
 
 if len(urls_with_ncy) > 0:
-    print ('These pages still show NOT_CONVERTED_YET: ')
+    print 'These pages still show NOT_CONVERTED_YET: '
     for url in urls_with_ncy:
-        print (url)
+        print url
