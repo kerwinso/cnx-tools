@@ -36,7 +36,6 @@ code {
 
 function book_json() {
   var book_url = prompt('Enter full CNX URL for the book/collection:');
-
   const regex = /^[a-z]+:\/\/([\S]+):/;
   var book_match = regex.exec(book_url);
   short_url_book = book_match[1];
