@@ -57,12 +57,13 @@ function page_json() {
   domain = page_match[1]
   short_url_page = page_match[2];
 //check if prod
-  if (short_url_page.includes('.cnx')) {
+  if (domain.includes('.cnx')) {
     var page_json_url = "https://archive-" + domain + short_url_page + ".json" ;
   }
   else {
     var page_json_url = "https://archive." + domain + short_url_page + ".json" ;
   }
+  //alert(domain)
   window.open(page_json_url, "_top", "false");
 }
 </script>
@@ -72,10 +73,10 @@ function page_json() {
   <h1>CNX JSON Loader</h1>
   Instructions:
   <ol>
-    <li>Load a CNX book or page in a different browser tab, the link will look something like this: <code>https://qa.cnx.org/contents/r-QzKsl_@13.1:KZMdiUko@13/Preface</code></li>
-    <li>Copy the URL from the location bar.</li>
+    <li>Load a CNX book or page in a different browser tab, the URL will look something like this:<br> <code>https://qa.cnx.org/contents/r-QzKsl_@13.1:KZMdiUko@13/Preface</code></li>
+    <li>Copy the URL from the browser location bar.</li>
     <li>Click one of the two links below.</li>
-    <li>Paste the URL from step 2 above into the prompt to get your JSON. (What could be simpler ;-)</li>
+    <li>Paste the URL from step 2 above into the prompt to get your JSON.</li>
   </ol>
   <br>
   <span onclick="book_json()" class="link">Load book/collection json </span>
