@@ -2,19 +2,32 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
 <title>CNX URL to JSON loader</title>
 <style>
+body {
+  font-family: Noto Sans, Helvetica, sans-serif;
+}
+h1 {
+  font-family: Roboto Slab, serif;
+  color: #5E6062;
+}
+code {
+    font-size: 85%;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    display: inline;
+    color: #555555;
+    background: #f4f4f4;
+    padding: 0.2em 0.2em;
+}
 .link {
+  font-size: 18px;
   color: blue;
   text-decoration: underline;
 }
-
 .link:hover {
   cursor: pointer;
   text-decoration: none;
 }
-
 </style>
 
 <script type="text/javascript">
@@ -27,7 +40,6 @@ function book_json() {
   const regex = /^[a-z]+:\/\/([\S]+):/;
   var book_match = regex.exec(book_url);
   short_url_book = book_match[1];
-
 //check if prod
   if (short_url_book.includes('.cnx')) {
     var book_json_url = "https://archive-" + short_url_book + ".json" ;
@@ -40,21 +52,34 @@ function book_json() {
 
 function page_json() {
   var book_url = prompt('Enter full CNX URL for the book/collection:');
-  const regex = /^[a-z]+:\/\/([\S]+):/;
+  const regex = /^[a-z]+:\/\/([\S]+\/[\S]+\/)[\S]+:([\S]+)\//;
   var page_match = regex.exec(book_url);
-  short_url_page = page_match[1];
-  var page_json_url = "https://archive-" + short_url_book + ".json" ;
+  domain = page_match[1]
+  short_url_page = page_match[2];
+//check if prod
+  if (short_url_page.includes('.cnx')) {
+    var page_json_url = "https://archive-" + domain + short_url_page + ".json" ;
+  }
+  else {
+    var page_json_url = "https://archive." + domain + short_url_page + ".json" ;
+  }
   window.open(page_json_url, "_top", "false");
-
 }
-
-
 </script>
 </head>
 
 <body>
+  <h1>CNX JSON Loader</h1>
+  Instructions:
+  <ol>
+    <li>Load a CNX book or page in a different browser tab, the link will look something like this: <code>https://qa.cnx.org/contents/r-QzKsl_@13.1:KZMdiUko@13/Preface</code></li>
+    <li>Copy the URL from the location bar.</li>
+    <li>Click one of the two links below.</li>
+    <li>Paste the URL from step 2 above into the prompt to get your JSON. (What could be simpler ;-)</li>
+  </ol>
+  <br>
   <span onclick="book_json()" class="link">Load book/collection json </span>
   <br> <br>
-  <span onclick="" class="link">Load page/module json</span>
+  <span onclick="page_json()" class="link">Load page/module json</span>
 </body>
 </html>
