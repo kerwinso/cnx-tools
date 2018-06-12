@@ -53,7 +53,7 @@ function page_json() {
   var book_url = prompt('Enter full CNX URL for the book/collection:');
   const regex = /^[a-z]+:\/\/([\S]+\/[\S]+\/)[\S]+:([\S]+)\//;
   var page_match = regex.exec(book_url);
-  domain = page_match[1]
+  domain = page_match[1];
   short_url_page = page_match[2];
 //check if prod
   if (domain.includes('.cnx')) {
@@ -65,6 +65,25 @@ function page_json() {
   //alert(domain)
   window.open(page_json_url, "_top", "false");
 }
+
+function extras() {
+ var book_url = prompt('Enter full CNX URL for the book/collection:');
+ const regex = /^[a-z]+:\/\/([\S]+\/)[\S]+\/([\S]+):[\S]+\//;
+ var book_match = regex.exec(book_url);
+ domain = book_match[1];
+ short_url_page = book_match[2];
+//check if prod
+ if (domain.includes('.cnx')) {
+   var extras_json_url = "https://archive-" + domain + "extras/" + short_url_page;
+ }
+ else {
+   var extras_json_url = "https://archive." + domain + "extras/" + short_url_page;
+ }
+ //alert(domain)
+ window.open(extras_json_url, "_top", "false");
+}
+
+
 </script>
 </head>
 
@@ -82,5 +101,7 @@ function page_json() {
   <span onclick="book_json()" class="link">Load book/collection json</span>
   <br> <br>
   <span onclick="page_json()" class="link">Load page/module json</span>
+  <br> <br>
+  <span onclick="extras()" class="link">Load extras json</span>
 </body>
 </html>
