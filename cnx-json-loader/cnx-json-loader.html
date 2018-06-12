@@ -38,13 +38,13 @@ function book_json() {
   var book_url = prompt('Enter full CNX URL for the book/collection:');
   const regex = /^[a-z]+:\/\/([\S]+):/;
   var book_match = regex.exec(book_url);
-  short_url_book = book_match[1];
+  short_url = book_match[1];
 //check if prod
-  if (short_url_book.includes('.cnx')) {
-    var book_json_url = "https://archive-" + short_url_book + ".json" ;
+  if (short_url.includes('.cnx')) {
+    var book_json_url = "https://archive-" + short_url + ".json" ;
   }
   else {
-    var book_json_url = "https://archive." + short_url_book + ".json" ;
+    var book_json_url = "https://archive." + short_url + ".json" ;
   }
   window.open(book_json_url, "_top", "false");
 }
@@ -54,13 +54,13 @@ function page_json() {
   const regex = /^[a-z]+:\/\/([\S]+\/[\S]+\/)[\S]+:([\S]+)\//;
   var page_match = regex.exec(book_url);
   domain = page_match[1];
-  short_url_page = page_match[2];
+  page_short_id = page_match[2];
 //check if prod
   if (domain.includes('.cnx')) {
-    var page_json_url = "https://archive-" + domain + short_url_page + ".json" ;
+    var page_json_url = "https://archive-" + domain + page_short_id + ".json" ;
   }
   else {
-    var page_json_url = "https://archive." + domain + short_url_page + ".json" ;
+    var page_json_url = "https://archive." + domain + page_short_id + ".json" ;
   }
   //alert(domain)
   window.open(page_json_url, "_top", "false");
@@ -71,13 +71,13 @@ function extras() {
  const regex = /^[a-z]+:\/\/([\S]+\/)[\S]+\/([\S]+):[\S]+\//;
  var book_match = regex.exec(book_url);
  domain = book_match[1];
- short_url_page = book_match[2];
+ book_short_id= book_match[2];
 //check if prod
  if (domain.includes('.cnx')) {
-   var extras_json_url = "https://archive-" + domain + "extras/" + short_url_page;
+   var extras_json_url = "https://archive-" + domain + "extras/" + book_short_id;
  }
  else {
-   var extras_json_url = "https://archive." + domain + "extras/" + short_url_page;
+   var extras_json_url = "https://archive." + domain + "extras/" + book_short_id;
  }
  //alert(domain)
  window.open(extras_json_url, "_top", "false");
