@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+  <title>CNX Latest Repo Tags</title>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=512">
+  <script>
+
+    function getLatestTag(repo) {
+      tags_url = 'https://api.github.com/repos/Connexions/' + repo + '/tags';
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          response = xhr.responseText;
+          resp = JSON.parse(response);
+          latest_tag = resp[0].name;
+          text = 'Latest tag for ';
+
+          node = document.createElement("p");
+          node.setAttribute('id', repo);
+          textnode = document.createTextNode(text);
+          node.appendChild(textnode);
+          document.getElementById('content').appendChild(node);
+
+          newlink = document.createElement('a');
+          newlink.innerHTML = 'Connexions/' + repo + ': ' + latest_tag;
+          newlink.setAttribute('target', '_blank');
+          newlink.setAttribute('title', 'Click to compare to commits on master');
+          newlink.setAttribute('href', 'https://github.com/Connexions/' + repo
+            + '/compare/' + latest_tag + '...master');
+          document.getElementById(repo).appendChild(newlink);
+
+          }
+        }
+      xhr.open('GET', tags_url, true);
+      xhr.send(null);
+    }
+
+    function getLatestRhaptosTag(repo) {
+      tags_url = 'https://api.github.com/repos/Rhaptos/' + repo + '/tags';
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          response = xhr.responseText;
+          resp = JSON.parse(response);
+          latest_tag = resp[0].name;
+          text = 'Latest tag for ';
+
+          node = document.createElement("p");
+          node.setAttribute('id', repo);
+          textnode = document.createTextNode(text);
+          node.appendChild(textnode);
+          document.getElementById('content').appendChild(node);
+
+          newlink = document.createElement('a');
+          newlink.innerHTML = 'Rhaptos/' + repo + ': ' + latest_tag;
+          newlink.setAttribute('target', '_blank');
+          newlink.setAttribute('title', 'Click to compare to commits on master');
+          newlink.setAttribute('href', 'https://github.com/Rhaptos/' + repo
+            + '/compare/' + latest_tag + '...master');
+          document.getElementById(repo).appendChild(newlink);
+
+          }
+        }
+      xhr.open('GET', tags_url, true);
+      xhr.send(null);
+    }
+
+    // for user input
+    function lookupLatestTag(repo) {
+      repo = document.getElementById("repo-input").value;
+      //alert(repo);
+      tags_url = 'https://api.github.com/repos/Connexions/' + repo + '/tags';
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          response = xhr.responseText;
+          resp = JSON.parse(response);
+          text = 'Latest tag for ' + repo + ': ' + resp[0].name;
+          alert(text);
+          }
+        }
+      xhr.open('GET', tags_url, true);
+      xhr.send(null);
+    }
+
+  </script>
+</head>
+<body>
+
+  <h1>CNX Latest Repo Tags</h1>
+
+  <h4>Lists the latest tags from public Github CNX repos only (unauthenticated... for now).</h4>
+
+  <p>Enter Connexions repo name to get the latest tag number:
+    <input id="repo-input">
+    <button type="submit" onclick="lookupLatestTag()">Submit</button>
+  </p>
+
+  <p>
+    <em>If it didn't work, either the repo isn't public, the repo isn't part of Connexions, you spelled something wrong, or we hit the API limit. Which you would know if nearly everything below the line below is blank.</em>
+  </p>
+
+  <hr>
+
+  <p><a href="https://github.com/Connexions/oer.exports/releases" target="_blank">oer.exports releases </a> (private)</p>
+
+  <script>getLatestTag('cnx-archive');</script>
+  <script>getLatestTag('cnx-db');</script>
+  <script>getLatestTag('cnx-deploy');</script>
+  <script>getLatestTag('cnx-easybake');</script>
+  <script>getLatestTag('cnx-epub');</script>
+  <script>getLatestTag('cnx-press');</script>
+  <script>getLatestTag('cnx-publishing');</script>
+  <script>getLatestTag('cnx-recipes');</script>
+  <script>getLatestTag('cnxml');</script>
+  <script>getLatestTag('nebuchadnezzar');</script>
+  <script>getLatestTag('rhaptos.cnxmlutils');</script>
+  <script>getLatestTag('webview');</script> 
+
+  <!-- <script>getLatestTag('baked-pdf');</script> -->
+
+  <script>getLatestRhaptosTag('Products.CNXMLDocument');</script>
+  <script>getLatestRhaptosTag('Products.RhaptosCollection');</script>
+  <script>getLatestRhaptosTag('Products.RhaptosModuleEditor');</script>
+  <script>getLatestRhaptosTag('Products.RhaptosModuleStorage');</script>
+  <script>getLatestRhaptosTag('Products.RhaptosRepository');</script>
+
+
+  <div id="content">  </div>
+
+</body>
+</html>
