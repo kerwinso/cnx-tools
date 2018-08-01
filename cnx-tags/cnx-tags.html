@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>CNX Repo Tags</title>
+  <title>CNX Latest Repo Tags</title>
   <meta charset="UTF-8">
   <meta name=viewport content="width=512">
   <script>
@@ -8,17 +8,12 @@
     function getLatestTag(repo) {
       //repo = 'cnx-deploy'
       tags_url = 'https://api.github.com/repos/Connexions/' + repo + '/tags';
-
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
           response = xhr.responseText;
           resp = JSON.parse(response);
-          //alert(resp[0].name);
-          // content = document.getElementById("content");
-          // content.innerHTML += repo + ': ' + resp[0].name;
-          text = repo + ': ' + resp[0].name;
-
+          text = repo + ' latest tag: ' + resp[0].name;
           node = document.createElement("p");
           textnode = document.createTextNode(text);
           node.appendChild(textnode);
@@ -27,16 +22,35 @@
         }
       xhr.open('GET', tags_url, true);
       xhr.send(null);
-}
+    }
+
+    // for user input
+    function lookupLatestTag(repo) {
+      repo = document.getElementById("repo-input").value;
+      //alert(repo);
+      tags_url = 'https://api.github.com/repos/Connexions/' + repo + '/tags';
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          response = xhr.responseText;
+          resp = JSON.parse(response);
+          text = repo + ' latest tag: ' + resp[0].name;
+          alert(text);
+          }
+        }
+      xhr.open('GET', tags_url, true);
+      xhr.send(null);
+
+    }
 
   </script>
 </head>
 <body>
 
-  <h1>CNX Repo Tags</h1>
+  <h1>CNX Latest Repo Tags</h1>
 
-  <p>Lists the most recent tags from public Github CNX repos only (unauthenticated... so far).
-  </p>
+  <h4>Lists the latest tags from public Github CNX repos only (unauthenticated... so far).
+  </h4>
 
   <!-- <p onclick="getLatestTag('cnx-deploy')">Click here
   </p>
@@ -44,7 +58,28 @@
   <p onclick="getLatestTag('cnx-press')">Then here
   </p> -->
 
-  <script>getLatestTag('cnx-press');</script>  
+<p>Enter Connexions repo name to get the latest tag number:
+  <br><br>
+  <input id="repo-input">
+  <button type="button" onclick="lookupLatestTag()">Submit</button>
+</p>
+
+<br/>
+<hr>
+  <script>getLatestTag('cnx-deploy');</script>
+  <script>getLatestTag('webview');</script>
+  <script>getLatestTag('cnx-recipes');</script>
+  <script>getLatestTag('cnx-press');</script>
+  <script>getLatestTag('nebuchadnezzar');</script>
+  <script>getLatestTag('rhaptos.cnxmlutils');</script>
+  <script>getLatestTag('cnxml');</script>
+  <script>getLatestTag('cnx-archive');</script>
+  <script>getLatestTag('cnx-db');</script>
+  <script>getLatestTag('cnx-publishing');</script>
+  <script>getLatestTag('cnx-easybake');</script>
+  <script>getLatestTag('cnx-epub');</script>
+  <!-- <script>getLatestTag('baked-pdf');</script> -->
+
 
   <p id="content">
   </p>
