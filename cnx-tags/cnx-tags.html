@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name=viewport content="width=512">
   <script>
-  
+
     function getLatestTag(repo) {
       tags_url = 'https://api.github.com/repos/Connexions/' + repo + '/tags';
       var xhr = new XMLHttpRequest();
@@ -42,11 +42,23 @@
         if (xhr.readyState == XMLHttpRequest.DONE) {
           response = xhr.responseText;
           resp = JSON.parse(response);
-          text = 'Latest tag for Rhaptos/' + repo + ': ' + resp[0].name;
+          latest_tag = resp[0].name;
+          text = 'Latest tag for ';
+
           node = document.createElement("p");
+          node.setAttribute('id', repo);
           textnode = document.createTextNode(text);
           node.appendChild(textnode);
-          document.getElementById("content").appendChild(node);
+          document.getElementById('content').appendChild(node);
+
+          newlink = document.createElement('a');
+          newlink.innerHTML = 'Rhaptos/' + repo + ': ' + latest_tag;
+          newlink.setAttribute('target', '_blank');
+          newlink.setAttribute('title', 'Click to compare to commits on master');
+          newlink.setAttribute('href', 'https://github.com/Rhaptos/' + repo
+            + '/compare/' + latest_tag + '...master');
+          document.getElementById(repo).appendChild(newlink);
+
           }
         }
       xhr.open('GET', tags_url, true);
@@ -77,7 +89,7 @@
 
   <h1>CNX Latest Repo Tags</h1>
 
-  <h4>Lists the latest tags from public Github CNX repos only (unauthenticated... so far).</h4>
+  <h4>Lists the latest tags from public Github CNX repos only (unauthenticated... for now).</h4>
 
   <p>Enter Connexions repo name to get the latest tag number:
     <input id="repo-input">
@@ -103,22 +115,18 @@
   <script>getLatestTag('cnxml');</script>
   <script>getLatestTag('nebuchadnezzar');</script>
   <script>getLatestTag('rhaptos.cnxmlutils');</script>
-  <script>getLatestTag('webview');</script>
+  <script>getLatestTag('webview');</script> -->
 
   <!-- <script>getLatestTag('baked-pdf');</script> -->
 
-  <!-- <script>getLatestRhaptosTag('Products.CNXMLDocument');</script>
+  <script>getLatestRhaptosTag('Products.CNXMLDocument');</script>
   <script>getLatestRhaptosTag('Products.RhaptosCollection');</script>
   <script>getLatestRhaptosTag('Products.RhaptosModuleEditor');</script>
   <script>getLatestRhaptosTag('Products.RhaptosModuleStorage');</script>
   <script>getLatestRhaptosTag('Products.RhaptosRepository');</script>
--->
 
 
-
-
-  <div id="content">
-  </div>
+  <div id="content">  </div>
 
 </body>
 </html>
