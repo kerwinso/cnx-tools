@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+  <title>CNX Repo Tags</title>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=512">
+  <script>
+
+    function getLatestTag(repo) {
+      //repo = 'cnx-deploy'
+      tags_url = 'https://api.github.com/repos/Connexions/' + repo + '/tags';
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          response = xhr.responseText;
+          resp = JSON.parse(response);
+          //alert(resp[0].name);
+          // content = document.getElementById("content");
+          // content.innerHTML += repo + ': ' + resp[0].name;
+          text = repo + ': ' + resp[0].name;
+
+          node = document.createElement("p");
+          textnode = document.createTextNode(text);
+          node.appendChild(textnode);
+          document.getElementById("content").appendChild(node);
+          }
+        }
+      xhr.open('GET', tags_url, true);
+      xhr.send(null);
+}
+
+  </script>
+</head>
+<body>
+
+  <h1>CNX Repo Tags</h1>
+
+  <p>Lists the most recent tags from public Github CNX repos only (unauthenticated... so far).
+  </p>
+
+  <!-- <p onclick="getLatestTag('cnx-deploy')">Click here
+  </p>
+
+  <p onclick="getLatestTag('cnx-press')">Then here
+  </p> -->
+
+  <script>getLatestTag('cnx-press');</script>  
+
+  <p id="content">
+  </p>
+
+</body>
+</html>
