@@ -15,11 +15,11 @@
           latest_tag = resp[0].name;
           text = 'Latest tag for ';
 
-          node = document.createElement("p");
+          node = document.createElement('li');
           node.setAttribute('id', repo);
           textnode = document.createTextNode(text);
           node.appendChild(textnode);
-          document.getElementById('content').appendChild(node);
+          document.getElementById('repos-list').appendChild(node);
 
           newlink = document.createElement('a');
           newlink.innerHTML = 'Connexions/' + repo + ': ' + latest_tag;
@@ -45,11 +45,11 @@
           latest_tag = resp[0].name;
           text = 'Latest tag for ';
 
-          node = document.createElement("p");
+          node = document.createElement('li');
           node.setAttribute('id', repo);
           textnode = document.createTextNode(text);
           node.appendChild(textnode);
-          document.getElementById('content').appendChild(node);
+          document.getElementById('repos-list').appendChild(node);
 
           newlink = document.createElement('a');
           newlink.innerHTML = 'Rhaptos/' + repo + ': ' + latest_tag;
@@ -115,7 +115,7 @@
   <script>getLatestTag('cnxml');</script>
   <script>getLatestTag('nebuchadnezzar');</script>
   <script>getLatestTag('rhaptos.cnxmlutils');</script>
-  <script>getLatestTag('webview');</script> 
+  <script>getLatestTag('webview');</script>
 
   <!-- <script>getLatestTag('baked-pdf');</script> -->
 
@@ -126,7 +126,7 @@
   <script>getLatestRhaptosTag('Products.RhaptosRepository');</script>
 
 
-  <div id="content">  </div>
+  <ul id="repos-list">  </ul>
 
 </body>
 </html>
