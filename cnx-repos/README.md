@@ -1,1 +1,1 @@
-http://ks52.web.rice.edu/cnx-tags.html
+http://ks52.web.rice.edu/cnx-repos.html
