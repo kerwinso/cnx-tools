@@ -46,7 +46,30 @@
       }
     xhr.open('GET', tags_url);
     xhr.send(null);
-  }
+    }
+
+  function getPypiVersion(repo) {
+    // https://pypi.org/pypi/nebuchadnezzar/json
+    pypi_url = 'https://pypi.org/pypi/' + repo + '/json';
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == XMLHttpRequest.DONE) {
+        response = xhr.responseText;
+        resp = JSON.parse(response);
+        pypi_version = resp.info.version;
+
+        newlink = document.createElement('a');
+        newlink.innerHTML = pypi_version;
+        newlink.setAttribute('target', '_blank');
+        newlink.setAttribute('title', 'pypi');
+        newlink.setAttribute('href', 'https://pypi.org/project/' + repo);
+        document.getElementById('pypi/'+ repo).appendChild(newlink);
+
+        }
+      }
+    xhr.open('GET', pypi_url);
+    xhr.send(null);
+    }
 
     // for user input to look up the latest GH tag
     function lookupLatestCNXTag(repo) {
@@ -106,9 +129,9 @@
   <table>
     <tr>
       <td>
-        <strong><a href="https://github.com/Connexions/cnx-archive/" target="_blank">cnx-archive</a></strong>: <a href="https://github.com/Connexions/cnx-archive/commits/master" target="_blank">commits</a> | <a href="https://github.com/Connexions/cnx-archive/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">PRs</a> | <a href="https://github.com/Connexions/cnx-archive/releases" target="_blank">releases</a> |
+        <strong><a href="https://github.com/Connexions//" target="_blank">cnx-archive</a></strong>: <a href="https://github.com/Connexions/cnx-archive/commits/master" target="_blank">commits</a> | <a href="https://github.com/Connexions/cnx-archive/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">PRs</a> | <a href="https://github.com/Connexions/cnx-archive/releases" target="_blank">releases</a> |
         <br>
-        <a href="https://github.com/Connexions/cnx-archive/tags" target="_blank">latest GH tag</a>: <span id='Connexions/cnx-archive'><script>getLatestCNXTag('Connexions/cnx-archive');</script></span> | latest pypi tag: 0.00
+        <a href="https://github.com/Connexions/cnx-archive/tags" target="_blank">latest GH tag</a>: <span id='Connexions/cnx-archive'><script>getLatestCNXTag('Connexions/cnx-archive');</script></span> | latest pypi tag: <span id='pypi/cnx-archive'><script>getPypiVersion('cnx-archive')</script></span>
       </td>
 
       <td>
