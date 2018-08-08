@@ -5,29 +5,20 @@
   <meta name=viewport content="width=512">
   <link rel="shortcut icon" href="newspaper.ico" type="image/x-icon">
   <style>
-  .column {
-    float: left;
-    width: 50%;
+
+  table {
+    width: 700px;
   }
 
-  .row {
-   /* width:800px; */
-   margin:0 auto;
-   text-align: left;
-  }
-
-  /* Clear floats after the columns */
-  .row:after {
-      content: "";
-      display: table;
-      clear: both;
+  .noborder {
+    border:0;
   }
 
   td {
    border: 1px solid gray;
    text-align: left;
    padding: 7px;
-
+   width: 50%;
   }
   </style>
 
@@ -93,18 +84,20 @@
   </p>
 
 <!-- LEGACY DISTROS -->
-  <div class="row">
-    <div class="column">
+  <table>
+    <tr>
+      <td class="noborder">
       &#8226; <a href="https://github.com/Connexions/oer.exports/releases" target="_blank">oer.exports releases </a> (private)
       <br>
       &#8226; <a href="https://github.com/Rhaptos/Products.RhaptosPrint/commits/production" target="_blank">RhaptosPrint commits on `production` branch</a>
-    </div>
-    <div class="column">
+      </td>
+      <td class="noborder">
       &#8226; <a href="http://dist.rhaptos.org/" target="_blank">dist.rhaptos.org</a> (legacy/plone eggs)
       <br>
       &#8226; <a href="https://packages.cnx.org/js-builds/" target="_blank">packages.cnx.org/js-builds/</a> (webview builds)
-    </div>
-  </div>
+      </td>
+    </tr>
+  </table>
 
   <hr>
 
