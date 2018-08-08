@@ -72,16 +72,7 @@
 
   <h1>CNX Repos Dashboard</h1>
 
-  <h4>Lists the latest tags from public Github CNX repos only (unauthenticated... for now).</h4>
-
-  <p>Enter Connexions repo name to get the latest tag number:
-    <input id="repo-input">
-    <button type="submit" onclick="lookupLatestTag()">Submit</button>
-  </p>
-
-  <p>
-    <em>If search didn't work, either the repo isn't public, the repo isn't part of Connexions, you spelled something wrong, or we hit the API limit. Which you would know if nearly everything below the line below is blank.</em>
-  </p>
+  <h4>Lists the latest tags from public GitHub CNX repos only (unauthenticated... for now).</h4>
 
 <!-- LEGACY DISTROS -->
   <table>
@@ -187,6 +178,16 @@
 
     </tr>
   </table>
+
+  <hr>
+  <p>Enter Connexions repo name to get the latest tag number:
+    <input id="repo-input">
+    <button type="submit" onclick="lookupLatestTag()">Submit</button>
+  </p>
+
+  <p>
+    <em>If search didn't work, either the repo isn't public, the repo isn't part of Connexions, you spelled something wrong, or we hit the API limit.</em>
+  </p>
 
 </body>
 </html>
