@@ -56,7 +56,6 @@
     xhr.send(null);
   }
 
-
     // for user input to look up the latest tag
     function lookupLatestTag(repo) {
       repo = document.getElementById("repo-input").value;
@@ -77,6 +76,7 @@
 
   </script>
 </head>
+
 <body>
 
   <h1>CNX Repos Dashboard</h1>
@@ -92,7 +92,7 @@
     <em>If search didn't work, either the repo isn't public, the repo isn't part of Connexions, you spelled something wrong, or we hit the API limit. Which you would know if nearly everything below the line below is blank.</em>
   </p>
 
-
+<!-- LEGACY DISTROS -->
   <div class="row">
     <div class="column">
       &#8226; <a href="https://github.com/Connexions/oer.exports/releases" target="_blank">oer.exports releases </a> (private)
@@ -106,9 +106,9 @@
     </div>
   </div>
 
-
   <hr>
 
+<!-- CNX REPOS -->
   <table>
     <tr>
       <td>
@@ -116,77 +116,84 @@
       </td>
 
       <td>
-        <a href="https://github.com/Connexions/cnx-db/" target="_blank">cnx-db</a>: <a href="https://github.com/Connexions/cnx-db/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-db/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-db/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-db'><script>getLatestTag('Connexions/cnx-db');</script></span>
+        <strong><a href="https://github.com/Connexions/cnx-db/" target="_blank">cnx-db</a></strong>: <a href="https://github.com/Connexions/cnx-db/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-db/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-db/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-db'><script>getLatestTag('Connexions/cnx-db');</script></span>
       </td>
     </tr>
     <tr>
       <td>
-       <a href="https://github.com/Connexions/cnx-deploy/" target="_blank">cnx-deploy</a>: <a href="https://github.com/Connexions/cnx-deploy/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-deploy/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-deploy/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-deploy'><script>getLatestTag('Connexions/cnx-deploy');</script></span>
+       <strong><a href="https://github.com/Connexions/cnx-deploy/" target="_blank">cnx-deploy</a></strong>: <a href="https://github.com/Connexions/cnx-deploy/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-deploy/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-deploy/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-deploy'><script>getLatestTag('Connexions/cnx-deploy');</script></span>
       </td>
 
       <td>
-        <a href="https://github.com/Connexions/cnx-easybake/" target="_blank">cnx-easybake</a>: <a href="https://github.com/Connexions/cnx-easybake/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-easybake/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-easybake/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-easybake'><script>getLatestTag('Connexions/cnx-easybake');</script></span>
+        <strong><a href="https://github.com/Connexions/cnx-easybake/" target="_blank">cnx-easybake</a></strong>: <a href="https://github.com/Connexions/cnx-easybake/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-easybake/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-easybake/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-easybake'><script>getLatestTag('Connexions/cnx-easybake');</script></span>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://github.com/Connexions/cnx-epub/" target="_blank">cnx-epub</a>: <a href="https://github.com/Connexions/cnx-epub/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-epub/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-epub/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-epub'><script>getLatestTag('Connexions/cnx-epub');</script></span>
+        <strong><a href="https://github.com/Connexions/cnx-epub/" target="_blank">cnx-epub</a></strong>: <a href="https://github.com/Connexions/cnx-epub/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-epub/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-epub/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-epub'><script>getLatestTag('Connexions/cnx-epub');</script></span>
       </td>
       <td>
-        <a href="https://github.com/Connexions/cnx-press/" target="_blank">cnx-press</a>: <a href="https://github.com/Connexions/cnx-press/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-press/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-press/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-press'><script>getLatestTag('Connexions/cnx-press');</script></span>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://github.com/Connexions/cnx-publishing/" target="_blank">cnx-publishing</a>: <a href="https://github.com/Connexions/cnx-publishing/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-publishing/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-publishing/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-publishing'><script>getLatestTag('Connexions/cnx-publishing');</script></span>
-      </td>
-      <td>
-        <a href="https://github.com/Connexions/cnx-recipes/" target="_blank">cnx-recipes</a>: <a href="https://github.com/Connexions/cnx-recipes/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-recipes/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-recipes/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-recipes'><script>getLatestTag('Connexions/cnx-recipes');</script></span>
+        <strong><a href="https://github.com/Connexions/cnx-press/" target="_blank">cnx-press</a></strong>: <a href="https://github.com/Connexions/cnx-press/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-press/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-press/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-press'><script>getLatestTag('Connexions/cnx-press');</script></span>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://github.com/Connexions/cnxml/" target="_blank">cnxml</a>: <a href="https://github.com/Connexions/cnxml/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnxml/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnxml/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnxml'><script>getLatestTag('Connexions/cnxml');</script></span>
+        <strong><a href="https://github.com/Connexions/cnx-publishing/" target="_blank">cnx-publishing</a></strong>: <a href="https://github.com/Connexions/cnx-publishing/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-publishing/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-publishing/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-publishing'><script>getLatestTag('Connexions/cnx-publishing');</script></span>
+      </td>
+      <td>
+        <strong><a href="https://github.com/Connexions/cnx-recipes/" target="_blank">cnx-recipes</a></strong>: <a href="https://github.com/Connexions/cnx-recipes/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnx-recipes/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnx-recipes/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnx-recipes'><script>getLatestTag('Connexions/cnx-recipes');</script></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong><a href="https://github.com/Connexions/cnxml/" target="_blank">cnxml</a></strong>: <a href="https://github.com/Connexions/cnxml/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/cnxml/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/cnxml/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/cnxml'><script>getLatestTag('Connexions/cnxml');</script></span>
       </td>
 
       <td>
-        <a href="https://github.com/Connexions/nebuchadnezzar" target="_blank">nebuchadnezzar</a>: <a href="https://github.com/Connexions/nebuchadnezzar/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/nebuchadnezzar/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/nebuchadnezzar/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/nebuchadnezzar'><script>getLatestTag('Connexions/nebuchadnezzar');</script></span>
+        <strong><a href="https://github.com/Connexions/nebuchadnezzar" target="_blank">nebuchadnezzar</a></strong>: <a href="https://github.com/Connexions/nebuchadnezzar/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/nebuchadnezzar/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/nebuchadnezzar/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/nebuchadnezzar'><script>getLatestTag('Connexions/nebuchadnezzar');</script></span>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://github.com/Connexions/rhaptos.cnxmlutils/" target="_blank">rhaptos.cnxmlutils</a>: <a href="https://github.com/Connexions/rhaptos.cnxmlutils/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/rhaptos.cnxmlutils/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/rhaptos.cnxmlutils/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/rhaptos.cnxmlutils'><script>getLatestTag('Connexions/rhaptos.cnxmlutils');</script></span>
+        <strong><a href="https://github.com/Connexions/rhaptos.cnxmlutils/" target="_blank">rhaptos.cnxmlutils</a></strong>: <a href="https://github.com/Connexions/rhaptos.cnxmlutils/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/rhaptos.cnxmlutils/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/rhaptos.cnxmlutils/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/rhaptos.cnxmlutils'><script>getLatestTag('Connexions/rhaptos.cnxmlutils');</script></span>
       </td>
 
       <td>
-        <a href="https://github.com/Connexions/webview" target="_blank">webview</a>: <a href="https://github.com/Connexions/webview/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/webview/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/webview/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/webview'><script>getLatestTag('Connexions/webview');</script></span>
+        <strong><a href="https://github.com/Connexions/webview" target="_blank">webview</a></strong>: <a href="https://github.com/Connexions/webview/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Connexions/webview/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com/Connexions/webview/releases" target="_blank">releases</a> | latest tag: <span id='Connexions/webview'><script>getLatestTag('Connexions/webview');</script></span>
       </td>
     </tr>
   </table>
 
 
   <hr>
-  <!-- LEGACY REPOS -->
+  <!-- LEGACY/ RHAPTOS REPOS -->
+  <table>
+    <tr>
+      <td>
+        <strong><a href="https://github.com/Rhaptos/Products.CNXMLDocument" target="_blank">Products.CNXMLDocument</a></strong>: <a href="https://github.com/Rhaptos/Products.CNXMLDocument/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Rhaptos/Products.CNXMLDocument/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com//Rhaptos/Products.CNXMLDocument/releases" target="_blank">releases</a> | latest tag: <span id='Rhaptos/Products.CNXMLDocument'><script>getLatestTag('Rhaptos/Products.CNXMLDocument');</script></span>
 
-  <ul>
-    <li>
-        <a href="https://github.com/Rhaptos/Products.CNXMLDocument" target="_blank">Products.CNXMLDocument</a> | <a href="https://github.com/Rhaptos/Products.CNXMLDocument/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Rhaptos/Products.CNXMLDocument/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com//Rhaptos/Products.CNXMLDocument/releases" target="_blank">releases</a> | latest tag: <span id='Rhaptos/Products.CNXMLDocument'><script>getLatestTag('Rhaptos/Products.CNXMLDocument');</script></span>
-    </li>
-    <li>
-        <a href="https://github.com/Rhaptos/Products.RhaptosCollection" target="_blank">Products.RhaptosCollection</a> | <a href="https://github.com/Rhaptos/Products.RhaptosCollection/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Rhaptos/Products.RhaptosCollection/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com//Rhaptos/Products.RhaptosCollection/releases" target="_blank">releases</a> | latest tag: <span id='Rhaptos/Products.RhaptosCollection'><script>getLatestTag('Rhaptos/Products.RhaptosCollection');</script></span>
-    </li>
-    <li>
-        <a href="https://github.com/Rhaptos/Products.RhaptosModuleEditor" target="_blank">Products.RhaptosModuleEditor</a> | <a href="https://github.com/Rhaptos/Products.RhaptosModuleEditor/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Rhaptos/Products.RhaptosModuleEditor/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com//Rhaptos/Products.RhaptosModuleEditor/releases" target="_blank">releases</a> | latest tag: <span id='Rhaptos/Products.RhaptosModuleEditor'><script>getLatestTag('Rhaptos/Products.RhaptosModuleEditor');</script></span>
-    </li>
-    <li>
-        <a href="https://github.com/Rhaptos/Products.RhaptosModuleStorage" target="_blank">Products.RhaptosModuleStorage</a> | <a href="https://github.com/Rhaptos/Products.RhaptosModuleStorage/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Rhaptos/Products.RhaptosModuleStorage/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com//Rhaptos/Products.RhaptosModuleStorage/releases" target="_blank">releases</a> | latest tag: <span id='Rhaptos/Products.RhaptosModuleStorage'><script>getLatestTag('Rhaptos/Products.RhaptosModuleStorage');</script></span>
-    </li>
-    <li>
-        <a href="https://github.com/Rhaptos/Products.RhaptosRepository" target="_blank">Products.RhaptosRepository</a> | <a href="https://github.com/Rhaptos/Products.RhaptosRepository/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Rhaptos/Products.RhaptosRepository/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com//Rhaptos/Products.RhaptosRepository/releases" target="_blank">releases</a> | latest tag: <span id='Rhaptos/Products.RhaptosRepository'><script>getLatestTag('Rhaptos/Products.RhaptosRepository');</script></span>
-    </li>
-  </ul>
+      </td>
 
+      <td>
+        <strong><a href="https://github.com/Rhaptos/Products.RhaptosCollection" target="_blank">Products.RhaptosCollection</a></strong>: <a href="https://github.com/Rhaptos/Products.RhaptosCollection/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Rhaptos/Products.RhaptosCollection/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com//Rhaptos/Products.RhaptosCollection/releases" target="_blank">releases</a> | latest tag: <span id='Rhaptos/Products.RhaptosCollection'><script>getLatestTag('Rhaptos/Products.RhaptosCollection');</script></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong><a href="https://github.com/Rhaptos/Products.RhaptosModuleEditor" target="_blank">Products.RhaptosModuleEditor</a></strong>: <a href="https://github.com/Rhaptos/Products.RhaptosModuleEditor/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Rhaptos/Products.RhaptosModuleEditor/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com//Rhaptos/Products.RhaptosModuleEditor/releases" target="_blank">releases</a> | latest tag: <span id='Rhaptos/Products.RhaptosModuleEditor'><script>getLatestTag('Rhaptos/Products.RhaptosModuleEditor');</script></span>
+      </td>
 
+      <td>
+        <strong><a href="https://github.com/Rhaptos/Products.RhaptosModuleStorage" target="_blank">Products.RhaptosModuleStorage</a></strong>: <a href="https://github.com/Rhaptos/Products.RhaptosModuleStorage/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Rhaptos/Products.RhaptosModuleStorage/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com//Rhaptos/Products.RhaptosModuleStorage/releases" target="_blank">releases</a> | latest tag: <span id='Rhaptos/Products.RhaptosModuleStorage'><script>getLatestTag('Rhaptos/Products.RhaptosModuleStorage');</script></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong><a href="https://github.com/Rhaptos/Products.RhaptosRepository" target="_blank">Products.RhaptosRepository</a></strong>: <a href="https://github.com/Rhaptos/Products.RhaptosRepository/commits/master" target="_blank">commits on master</a> | <a href="https://github.com/Rhaptos/Products.RhaptosRepository/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc" target="_blank">open PRs</a> | <a href="https://github.com//Rhaptos/Products.RhaptosRepository/releases" target="_blank">releases</a> | latest tag: <span id='Rhaptos/Products.RhaptosRepository'><script>getLatestTag('Rhaptos/Products.RhaptosRepository');</script></span>
+      </td>
+
+    </tr>
+  </table>
 
 </body>
 </html>
