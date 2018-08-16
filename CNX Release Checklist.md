@@ -15,6 +15,7 @@ Be sure to verify version numbers _after_ every deployment using the top-level `
 	- [ ] New RhaptosPrint egg should be built by DevOps (they need the version number)
 - [ ] **cnx-recipes** (*Helene*)
 	- [ ] Release created in https://github.com/Connexions/cnx-recipes/releases
+	- [ ] PyPi version revved
 	- [ ] cnx-deploy: `environments/__prod_envs/files/publishing-requirements.txt` should be updated -- a bot will automatically create this PR, which will need to be reviewed and merged.
 - [ ] **webview** (*Helene*)
  	- [ ] Release created in https://github.com/Connexions/webview/releases
@@ -35,7 +36,10 @@ And, also, **there are other CNX repos that are not listed below**.
 - [ ] **cnx-db** (*Ross or Mulich*)
  	- [ ] Release tag created in GitHub
 	- [ ] PyPi version revved
-	- [ ] cnx-deploy: `environments/__prod_envs/files/press-requirements.txt` should be updated -- a bot will automatically create this PR, which will need to be reviewed and merged.
+	- [ ] cnx-deploy: 3 files need updating (a bot will automatically create this PR, which will need to be reviewed and merged.):
+		- ` environments/__prod_envs/files/archive-requirements.txt`
+		- `environments/__prod_envs/files/press-requirements.txt` 
+		-  `environments/__prod_envs/files/publishing-requirements.txt`
 - [ ] **cnx-easybake** (*Ross or Mulich*)
  	- [ ] Release tag created in GitHub
 	- [ ] PyPi version revved
