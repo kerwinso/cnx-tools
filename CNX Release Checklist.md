@@ -7,6 +7,15 @@ Be sure to verify version numbers _after_ every deployment using the top-level `
 - RhaptosPrint version regressions: DevOps needs to keep `cnx-deploy/environments/__prod_envs/files/versions.cfg` updated for every cnx-deploy tag and deployment
 - Revs that don't get into cnx-deploy 
 
+**Note:** You can copy and paste the following checklists into a new issue and make them collapsible/expandable by wrapping markdown with the following tags in Github:
+```
+<details>
+<summary>Click here to see full checklist</summary>
+[CHECKLIST MARKDOWN HERE]
+</details>
+```
+See an example here: https://github.com/Connexions/webview/issues/1830
+
 ## Books repos
 
 - [ ] **oer.exports** (*Helene*)
@@ -29,36 +38,38 @@ Again: **not every repo below will be updated for every release.** You can check
 
 And, also, **there are other CNX repos that are not listed below**. 
 
-- [ ] **cnx-archive** (*Ross or Mulich*)
+- [ ] **cnx-archive** (*Ross*)
  	- [ ] Release tag created in GitHub
  	- [ ] PyPi version revved
-	- [ ] cnx-deploy: `environments/__prod_envs/files/publishing-requirements.txt` should be updated -- a bot will automatically create this PR, which will need to be reviewed and merged.
-- [ ] **cnx-db** (*Ross or Mulich*)
+	- [ ] cnx-deploy: 2 files need updating (a bot will automatically create this PR, which will need to be reviewed and merged):
+		- ` environments/__prod_envs/files/archive-requirements.txt`
+		- `environments/__prod_envs/files/publishing-requirements.txt` 
+- [ ] **cnx-db** (*Ross*)
  	- [ ] Release tag created in GitHub
 	- [ ] PyPi version revved
 	- [ ] cnx-deploy: 3 files need updating (a bot will automatically create this PR, which will need to be reviewed and merged.):
 		- ` environments/__prod_envs/files/archive-requirements.txt`
 		- `environments/__prod_envs/files/press-requirements.txt` 
 		-  `environments/__prod_envs/files/publishing-requirements.txt`
-- [ ] **cnx-easybake** (*Ross or Mulich*)
+- [ ] **cnx-easybake** (*Ross*)
  	- [ ] Release tag created in GitHub
 	- [ ] PyPi version revved
 	- [ ] cnx-deploy: `environments/__prod_envs/files/publishing-requirements.txt` should be updated -- a bot will automatically create this PR, which will need to be reviewed and merged.
-- [ ] **cnx-epub** (*Ross or Mulich*)
+- [ ] **cnx-epub** (*Ross*)
  	- [ ] Release tag created in GitHub
 	- [ ] PyPi version revved
 	- [ ] cnx-deploy: `environments/__prod_envs/files/publishing-requirements.txt` should be updated -- a bot will automatically create this PR, which will need to be reviewed and merged. 
-- [ ] **cnx-press** (*Ross or Mulich*)
+- [ ] **cnx-press** (*Ross*)
  	- [ ] Release tag created in GitHub
 	- [ ] cnx-deploy: `environments/__prod_envs/vars/versions.yml` should be updated -- a bot will automatically create this PR, which will need to be reviewed and merged.
-- [ ] **cnx-publishing** (*Ross or Mulich*)
+- [ ] **cnx-publishing** (*Ross*)
  	- [ ] Release tag created in GitHub
 	- [ ] PyPi version revved
 	- [ ] cnx-deploy: `environments/__prod_envs/files/publishing-requirements.txt` should be updated -- a bot will automatically create this PR, which will need to be reviewed and merged.
-- [ ] **nebuchadnezzar** (batch publishing client) (*Mulich*) - *no cnx-deploy change required*
+- [ ] **nebuchadnezzar** (batch publishing client) (*Dante*) - *no cnx-deploy change required*
  	- [ ] Release tag created in GitHub
 	- [ ] PyPi version revved
-- [ ] **Other CNX repos** such as `cnxml`, `rhaptos.cnxmlutils`, etc. (*Ross or Mulich*)
+- [ ] **Other CNX repos** such as `cnxml`, `rhaptos.cnxmlutils`, etc. (*Ross*)
  	- [ ] Release tag created in GitHub
 	- [ ] PyPi version revved
 	- [ ] cnx-deploy should be updated -- PRs may or may not be automatically generated.
